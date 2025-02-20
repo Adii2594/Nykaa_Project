@@ -1,10 +1,10 @@
 <template>
     <div id="app">
       <Navbar />
-      <HomePage />
-      <ProductPage />
+     <!-- <HomePage />
+     <ProductPage />
       <AboutUs />
-      <UserLogin />
+      <UserLogin />--> 
       <router-view/>
       <footer class="footer">
         <p>&copy; 2025 MyBrand. All rights reserved.</p>
@@ -14,18 +14,18 @@
   
   <script>
   import Navbar from "./components/AppNavbar.vue";
-  import ProductPage from "./pages/ProductPage.vue";
-  import HomePage from "./pages/HomePage.vue";
-  import AboutUs from "./pages/AboutUs.vue";
-  import UserLogin from "./components/UserLogin.vue";
+  //import ProductPage from "./pages/ProductPage.vue";
+  //import HomePage from "./pages/HomePage.vue";
+  //import AboutUs from "./pages/AboutUs.vue";
+  //import UserLogin from "./components/UserLogin.vue";
   
   export default {
     components: {
       Navbar,
-      HomePage,
-      ProductPage,
-      AboutUs,
-      UserLogin,
+      //HomePage,
+      //ProductPage,
+      //AboutUs,
+      //UserLogin,
     },
   };
   </script>

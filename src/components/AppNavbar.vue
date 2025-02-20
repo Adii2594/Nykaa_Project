@@ -11,8 +11,9 @@
         <li><router-link to="/">Home</router-link></li>
         <li><router-link to="/products">Products</router-link></li>
         <li><router-link to="/about">About Us</router-link></li>
-        <li><router-link to="/logo-icon" class="logo">
-          <img src="https://i.pinimg.com/736x/97/21/05/972105c5a775f38cf33d3924aea053f1.jpg">
+        <li class="login-icon"><router-link to="/login">
+          <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" 
+          style="height: 17px;  width: 15px;">
         </router-link></li>
       </ul>
     </nav>
@@ -32,10 +33,15 @@
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    width: auto;
+    width: 100%;
+    right: 0%;
+    left:0%;
     margin: 0;
     background-color: rgb(216, 212, 214);
-    box-shadow: 3px 3px 3px 0px rgb(99, 99, 99);
+    box-shadow: 3px 3px 3px 0px rgb(99, 99, 99, 0.4);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
   }
   
   .logo img 
@@ -61,18 +67,20 @@
   
   .login-icon 
   {
-    width: 20px;
+    height: 15px;
+    width: 10px;
     cursor: pointer;
+    transition: transform 0.3s ease-in-out;
   }
 
   .login-icon:hover {
     transform: scale(1.1);
   }
-
    
   * {
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
 }
 
   </style>
