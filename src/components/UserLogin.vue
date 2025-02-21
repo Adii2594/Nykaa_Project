@@ -1,5 +1,7 @@
 <template>
   <div class="wrapper">
+    <!--background gif-->
+    <img src="https://i.makeagif.com/media/9-26-2017/yb2-TV.gif" alt="Background Gif" class="bg-gif" />
   <div class="container">
     <h1>User Authentication</h1>
 
@@ -84,57 +86,105 @@ const handleRegister = () => {
 </script>
 
 <style>
+
+/* Wrapper to position GIF and center content */
 .wrapper {
-  background-color: pink;
-  margin: 0;
-  padding:0;
-  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  overflow: hidden;
 }
 
+/* Background GIF Styling */
+.bg-gif {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Authentication Form Container (Glassmorphism Effect) */
 .container {
-  background-color: white;
+  background: rgba(255, 255, 255, 0.1); /* Transparent white */
+  backdrop-filter: blur(10px); /* Blur effect */
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  width: 300px;
-}
-
-h1 {
+  border-radius: 12px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  width: 320px;
+  z-index: 1;
   text-align: center;
-  font-size: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Soft border */
 }
 
+/* Title Styles */
+h1 {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 10px;
+}
+
+/* Input Field Styles */
 input {
   padding: 10px;
   width: 100%;
   margin-top: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  outline: none;
 }
 
+/* Placeholder Text Color */
+input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Button Styles */
 button {
-  padding: 10px;
-  background-color: #4CAF50;
+  padding: 12px;
+  background: linear-gradient(45deg, #4CAF50, #2E8B57);
   color: white;
   border: none;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 8px;
   width: 100%;
   margin-top: 20px;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
 button:hover {
-  background-color: #45a049;
+  background: linear-gradient(45deg, #45a049, #1E6F5C);
 }
 
+/* Error Message */
 .alert {
-  color: red;
+  color: rgb(255, 100, 100);
   font-size: 0.9rem;
   margin-top: 10px;
   text-align: center;
+}
+
+/* Text and Links */
+p {
+  color: white;
+}
+
+a {
+  color: #00e6ff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 </style>
