@@ -1,5 +1,6 @@
 <template>
   <div class="product-list">
+  
     <div class="product" v-for="(product, index) in products" :key="index" 
     @click="openPopup(product)">
       <div class="image-container">

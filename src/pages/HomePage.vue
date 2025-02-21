@@ -39,9 +39,10 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 
 const images = ref([
-  'https://images-static.nykaa.com/uploads/a63e79b0-c79a-4a83-a324-30ade1202bd7.jpg?tr=cm-pad_resize,w-600',
+  'https://images-static.nykaa.com/uploads/a34feca7-b919-4917-be04-518122356cfd.gif',
+  'https://digitalscholar.in/wp-content/uploads/2022/05/janhvi-kapoor-nykaa-dicount.gif',
+  'https://images-static.nykaa.com/uploads/e011eada-d734-443b-9469-b3c5a9081766.gif',
   'https://images-static.nykaa.com/uploads/922faeea-fa45-4e14-97eb-e300f9e5c4a2.jpg',
-  'https://www.shopickr.com/wp-content/uploads/2015/06/nykaa-makeup-sale-9-10-2015-offers.jpg',
   'https://www.analyticssteps.com/backend/media/thumbnail/6743613/7557273_1606234814_nyka.jpg',
 ]);
 
