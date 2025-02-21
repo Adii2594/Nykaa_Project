@@ -31,9 +31,12 @@
   </div>
   </div>
 </template>
-
 <script setup>
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+// Initialize router
+const router = useRouter();
 
 // State variables
 const isLogin = ref(true);
@@ -61,6 +64,9 @@ const handleLogin = () => {
   const storedUser = JSON.parse(localStorage.getItem(username.value));
   if (storedUser && storedUser.password === password.value) {
     alert('Login Successful!');
+
+    // Redirect to Home Page
+    router.push('/');
   } else {
     loginError.value = 'Invalid username or password.';
   }
@@ -84,6 +90,7 @@ const handleRegister = () => {
   }
 };
 </script>
+
 
 <style>
 

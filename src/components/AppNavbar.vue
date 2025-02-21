@@ -11,6 +11,8 @@
         <li><router-link to="/">Home</router-link></li>
         <li><router-link to="/products">Products</router-link></li>
         <li><router-link to="/about">About Us</router-link></li>
+        <li><router-link to="/brands">Brands</router-link></li>
+        <li><input type="text" v-model="searchQuery" placeholder="Search..." class="search-bar" /></li>
         <li class="login-icon"><router-link to="/login">
           <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" 
           style="height: 17px;  width: 15px;">
@@ -24,6 +26,11 @@
   <script>
   export default {
     name: "App",
+    data() {
+      return{
+        searchQuery: ''
+      };
+    }
   };
   </script>
   
@@ -53,7 +60,7 @@
   {
     list-style: none;
     display: flex;
-    gap: 15px;
+    gap: 20px;
     align-items: center;
     margin: 0;
     padding: 0;
@@ -65,6 +72,15 @@
     color: rgb(46, 27, 65);
   }
   
+  .search-bar {
+  padding: 7px;
+  margin-top: 0;
+  border-radius: 4px;
+  border: none;
+  color: black;
+  background-color: rgb(241, 58, 85);
+}
+
   .login-icon 
   {
     height: 15px;

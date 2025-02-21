@@ -1,42 +1,44 @@
 <template>
-  <!-- Image Slider -->
-  <main>
-    <div class="slider">
-      <button @click="prevSlide" class="nav-button left" style="width: 100px;">Prev</button>
-      <div class="image-wrapper">
-        <img :src="images[currentIndex]" alt="Image Slider" class="slider-image" />
-      </div>
-      <button @click="nextSlide" class="nav-button right" style="width: 100px; position: absolute;">Next</button>
-    </div>
-    <!-- Featured Products Section -->
-    <section class="products">
-      <h1>Shop by Category</h1>
-      <div class="product-grid">
-        <div class="product-card" v-for="(product, index) in products" :key="index">
-          <img :src="product.image" alt="Product" />
-          <h3>{{ product.name }}</h3>
-          <p>{{ product.price }}</p>
-          <button class="product-button">Buy Now</button>
+    <!-- Image Slider -->
+    <main>
+      <div class="slider">
+        <button @click="prevSlide" class="nav-button left" style="width: 100px;">Prev</button>
+        <div class="image-wrapper">
+          <img :src="images[currentIndex]" alt="Image Slider" class="slider-image" />
         </div>
+        <button @click="nextSlide" class="nav-button right" style="width: 100px; position: absolute;">Next</button>
       </div>
-    </section>
-    <!--seller section-->
-    <section class="sellers">
-      <h1>Best Sellers</h1>
-      <div class="seller-grid">
-        <div class="seller-card" v-for="(seller, index) in sellers" :key="index">
-          <img :src="seller.image" alt="seller" />
-          <h3>{{ seller.name }}</h3>
-          <button class="seller-button">Visit Now</button>
+      <!-- Featured Products Section -->
+      <section class="products">
+        <h1>Shop by Category</h1>
+        <div class="product-grid">
+          <div class="product-card" v-for="(product, index) in products" :key="index">
+            <img :src="product.image" alt="Product" />
+            <h3>{{ product.name }}</h3>
+            <p>{{ product.price }}</p>
+            <button class="product-button" @click="goToProductPage">Buy Now</button>
+          </div>
         </div>
-      </div>
-    </section>
-
-  </main>
-</template>
-
+      </section>
+      <!--seller section-->
+      <section class="sellers">
+        <h1>Best Sellers</h1>
+        <div class="seller-grid">
+          <div class="seller-card" v-for="(seller, index) in sellers" :key="index">
+            <img :src="seller.image" alt="seller" />
+            <h3>{{ seller.name }}</h3>
+            <button class="seller-button" @click="goToBrandsPage">Visit Now</button>
+          </div>
+        </div>
+      </section>
+  
+    </main>
+  </template>
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
 
 const images = ref([
   'https://images-static.nykaa.com/uploads/a34feca7-b919-4917-be04-518122356cfd.gif',
@@ -98,9 +100,10 @@ const sellers = ref([
   },
   {
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS26SQuQ7tTGkAx9ociDTMOspobmQBhsJX9YA&s',
-    name: 'Dove Hair Therapy',
+    name: 'Dove Advance HairCare',
   },
 ]);
+
 const currentIndex = ref(0);
 let interval = null;
 
@@ -109,7 +112,7 @@ const nextSlide = () => {
 };
 
 const prevSlide = () => {
-  currentIndex.value = (currentIndex.value - 1 + images.value.length) % images.value.length; // Prevents negative index
+  currentIndex.value = (currentIndex.value - 1 + images.value.length) % images.value.length;
 };
 
 onMounted(() => {
@@ -119,8 +122,15 @@ onMounted(() => {
 onUnmounted(() => {
   clearInterval(interval);
 });
-</script>
 
+const goToBrandsPage = () => {
+  router.push('/brands');
+};
+
+const goToProductPage = () => {
+    router.push('/products');
+};
+</script>
 <style scoped>
 * {
   margin: 0px;
@@ -242,4 +252,4 @@ onUnmounted(() => {
 }
 
 </style>
-  
+    
