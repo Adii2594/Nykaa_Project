@@ -10,7 +10,7 @@
       </div>
       <!-- Featured Products Section -->
       <section class="products">
-        <h1>Shop by Category</h1>
+        <h1 style="color: black; margin-bottom: 10px;">Shop by Category</h1>
         <div class="product-grid">
           <div class="product-card" v-for="(product, index) in products" :key="index">
             <img :src="product.image" alt="Product" />
@@ -22,7 +22,7 @@
       </section>
       <!--seller section-->
       <section class="sellers">
-        <h1>Best Sellers</h1>
+        <h1 style="color: black; margin-bottom: 10px;">Best Sellers</h1>
         <div class="seller-grid">
           <div class="seller-card" v-for="(seller, index) in sellers" :key="index">
             <img :src="seller.image" alt="seller" />
