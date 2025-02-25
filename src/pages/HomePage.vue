@@ -79,6 +79,26 @@ const products = ref([
     name: 'Charm & Blend',
     price: '$34.99',
   },
+  {
+    image: 'https://images-static.nykaa.com/uploads/cc93e5cd-b47c-4482-8af5-c4206454c6a7.jpg',
+    name: 'Matte Nailpaint',
+    price: '$10',
+  },
+  {
+    image: 'https://res.cloudinary.com/dyqcevdpm/image/upload/v1612596460/new-website/Compressed%20Images/img_product_banner2_mobile.jpg',
+    name: 'HairCare',
+    price: '$30',
+  },
+  {
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkNbTAO4cgy6rrZ5JNvcs1JOrrPDfRByxwnQ&s',
+    name: 'Organic Product',
+    price: '$24.99',
+  },
+  {
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJqjWHiuwSxqMqVQGBId5DxqzESP10vfIDgQ&s',
+    name: 'Accessories',
+    price: '$40',
+  },
 ]);
 
 const sellers = ref([
@@ -88,7 +108,7 @@ const sellers = ref([
   },
   {
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPLwtH6B2roN_nR0W6Ya7I8EFhBUwRDpfYgg&s',
-    name: 'Dior Sauvage Perfume',
+    name: 'Dior’s Sauvage Perfumes',
   },
   {
     image: 'https://i.ebayimg.com/images/g/4JAAAOSwL6Bl42c9/s-l400.jpg',
@@ -96,7 +116,7 @@ const sellers = ref([
   },
   {
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScrbcZGR1jKZZIFM8pMiNVsHLtDJVqB2imeQ&s',
-    name: 'Lakmé Eyeconic Kajal',
+    name: 'Lakme’s Eyeconic  Kajal',
   },
   {
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS26SQuQ7tTGkAx9ociDTMOspobmQBhsJX9YA&s',
@@ -136,8 +156,6 @@ const goToProductPage = () => {
   margin: 0px;
   padding: 0px;
 }
-/* General Styles */
-
 
 /* Image Slider */
 .slider {
@@ -180,78 +198,131 @@ const goToProductPage = () => {
   box-shadow: 10px 10px 10px 10px rgb(3, 3, 41);
 }
   
-  /* product */
-  .products {
+ /* Products Section */
+.products {
   text-align: center;
-  padding: 45px;
+  padding: 50px 20px;
 }
 
+/* Product Grid */
 .product-grid {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
   gap: 20px;
-  box-shadow: 0px 10px 20px rgba(31, 30, 30);
+  justify-content: center;
+  max-width: 1200px;
+  margin: auto;
 }
 
+/* Product Card */
 .product-card {
-  width: 200px;
-  text-align: center;
+  background: #fff;
   border: 1px solid #ddd;
   padding: 15px;
   border-radius: 10px;
-  
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Product Image */
 .product-card img {
   width: 100%;
-  border-radius: 5px;
-  height: 92px;
-  
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
+/* Product Button */
 .product-button {
   background: #ff4081;
   color: white;
-  padding: 5px 10px;
+  padding: 8px 12px;
   border: none;
   cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.3s;
 }
 
+.product-button:hover {
+  background: #e03572;
+}
 
-/* Seller */
+/* Seller Section */
 .sellers {
   text-align: center;
-  padding: 50px;
+  padding: 50px 20px;
+  background: #f9f9f9;
 }
 
+/* Seller Grid */
 .seller-grid {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive */
+  gap: 20px;
   justify-content: center;
-  gap: 23px;
-  box-shadow: 0px 10px 20px rgb(31, 30, 30);
+  max-width: 1200px;
+  margin: auto;
 }
 
+/* Seller Card */
 .seller-card {
-  width: 200px;
-  text-align: center;
+  background: #fff;
   border: 1px solid #ddd;
   padding: 15px;
   border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.seller-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .seller-card img {
   width: 100%;
-  border-radius: 5px;
-  height: 120px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
+/* Seller Button */
 .seller-button {
   background: #09a104;
   color: white;
-  padding: 5px 10px;
+  padding: 8px 12px;
   border: none;
   cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.3s;
 }
+
+.seller-button:hover {
+  background: #067c02;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product-grid,
+  .seller-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .product-grid,
+  .seller-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 
 </style>
     
