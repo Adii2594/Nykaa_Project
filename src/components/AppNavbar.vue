@@ -5,17 +5,23 @@
         <Navbar />
         <nav class="navbar">
           <div class="logo">
-            <img src="https://i0.wp.com/infobeamsolution.com/wp-content/uploads/2024/06/nykaalogo.png?fit=640%2C159&ssl=1" alt="logo" />
+            <ul>
+            <li><img src="https://i0.wp.com/infobeamsolution.com/wp-content/uploads/2024/06/nykaalogo.png?fit=640%2C159&ssl=1" alt="logo" /></li>
+            <li><input type="text" v-model="searchQuery" placeholder="Search..." class="search-bar" /></li>
+          </ul>
           </div>
         <ul>
         <li><router-link to="/">Home</router-link></li>
         <li><router-link to="/products">Products</router-link></li>
         <li><router-link to="/about">About Us</router-link></li>
         <li><router-link to="/brands">Brands</router-link></li>
-        <li><input type="text" v-model="searchQuery" placeholder="Search..." class="search-bar" /></li>
-        <li class="login-icon"><router-link to="/login">
+        <li><router-link to="/cart">
+          <img src="https://cdn-icons-png.flaticon.com/128/4903/4903482.png"
+          style="height: 25px; width: 22px;" />
+        </router-link></li>
+        <li><router-link to="/login">
           <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" 
-          style="height: 17px;  width: 15px;">
+          style="height: 22px;  width: 20px;">
         </router-link></li>
       </ul>
     </nav>
@@ -76,9 +82,9 @@
   padding: 7px;
   margin-top: 0;
   border-radius: 4px;
-  border: none;
+  border:rgb(5, 5, 5);
   color: black;
-  background-color: rgb(241, 58, 85);
+  background-color: rgb(189, 183, 184);
 }
 
   .login-icon 

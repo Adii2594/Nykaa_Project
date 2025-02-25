@@ -43,7 +43,7 @@ const router = useRouter();
 const images = ref([
   'https://images-static.nykaa.com/uploads/a34feca7-b919-4917-be04-518122356cfd.gif',
   'https://digitalscholar.in/wp-content/uploads/2022/05/janhvi-kapoor-nykaa-dicount.gif',
-  'https://images-static.nykaa.com/uploads/e011eada-d734-443b-9469-b3c5a9081766.gif',
+  'https://images-static.nykaa.com/uploads/ef2d18a6-50bd-406f-af90-41f11d4915a3.gif',
   'https://images-static.nykaa.com/uploads/922faeea-fa45-4e14-97eb-e300f9e5c4a2.jpg',
   'https://www.analyticssteps.com/backend/media/thumbnail/6743613/7557273_1606234814_nyka.jpg',
 ]);
@@ -116,7 +116,7 @@ const prevSlide = () => {
 };
 
 onMounted(() => {
-  interval = setInterval(nextSlide, 3000);
+  interval = setInterval(nextSlide, 2000);
 });
 
 onUnmounted(() => {
@@ -179,9 +179,9 @@ const goToProductPage = () => {
 .slider-image {
   box-shadow: 10px 10px 10px 10px rgb(3, 3, 41);
 }
-
-/* product */
-.products {
+  
+  /* product */
+  .products {
   text-align: center;
   padding: 45px;
 }
@@ -199,12 +199,14 @@ const goToProductPage = () => {
   border: 1px solid #ddd;
   padding: 15px;
   border-radius: 10px;
+  
 }
 
 .product-card img {
   width: 100%;
   border-radius: 5px;
   height: 92px;
+  
 }
 
 .product-button {

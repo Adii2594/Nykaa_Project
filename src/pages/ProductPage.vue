@@ -11,8 +11,9 @@
       </div>
     </div>
   </div>
-    <!-- Popup Modal -->
-    <div v-if="showPopup" class="popup-overlay" @click.self="closePopup">
+
+   <!-- Popup Modal -->
+   <div v-if="showPopup" class="popup-overlay" @click.self="closePopup">
     <div class="popup-content">
       <span class="close-btn" @click="closePopup">&times;</span>
 
@@ -25,12 +26,14 @@
           <p>{{ selectedProduct.description }}</p>
           <div class="buttons">
             <button class="add-to-cart" @click="addToCart(selectedProduct)">Add to Cart</button>
+            <router-link to="/cart" class="go-to-cart">Go to Cart</router-link>
             <button class="buy-now" @click="buyNow(selectedProduct)">Buy Now</button>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <router-link to="/cart" class="cart-link">View Cart ({{ cart.length }})</router-link>
 </template>
 
 <script>
@@ -40,115 +43,115 @@ export default {
     return {
       showPopup: false,
       selectedProduct: { name: "", description: "", image: "", price: "" },
-  
+      cart: JSON.parse(localStorage.getItem("cart")) || [], // Load cart from storage
       products: [
-        {
+      {
           name: "Nykaa Matte Lipstick",
           image: "https://images-static.nykaa.com/media/catalog/product/0/d/0dc21ecNYKAC00000079-az_6.jpg?tr=w-500",
           description: "A long-lasting matte lipstick with a smooth finish.",
-          price: "$20",
+          price: 20,
         },
         {
           name: "Nykaa Matte Nailpaint",
           image: "https://i.pinimg.com/736x/22/30/70/223070edf077158b0f87191eb838602b.jpg",
           description: "Chip-resistant and vibrant nail paint.",
-          price: "$10",
+          price: 10,
         },
         {
           name: "Nykaa Eyeshadow Palette",
           image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFZw8vSMddav8G_avMCSMHyrgZhTCQL1hsDw&s",
           description: "A highly pigmented eyeshadow palette with vibrant shades.",
-          price: "$30",
+          price: 30,
         },
         {
           name: "Nykaa Fit Me Foundation",
           image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS8-dQEWec8tDNpjJf_QIXXECzPtZLzvRU9w&s", 
           description: "A foundation for flawless, natural-looking coverage.",
-          price: "$25",
+          price: 25,
         },
         {
           name: "Nyakaa 24/7 Kajal",
           image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO9KiP_UjIkmL9N05Q8M5v5yd-sZvhLmymKQ&s", 
           description: "A smudge-proof kajal for bold, defined eyes.",
-          price: "$10",
+          price: 10,
         },
         {
           name: "Nykaa Makeup Kit",
           image: "https://images-static.nykaa.com/media/catalog/product/6/e/6e94760IBAHA00000090_2.jpg?tr=w-500", 
           description: "A comprehensive makeup kit with essential products.",
-          price: "$60",
+          price: 60,
         },
         {
           name: "Cetaphil Skin Cleanser",
           image: "https://www.nykaa.com/beauty-blog/wp-content/uploads/images/issue323/Himalayan-HempOI.jpg",
           description: "A gentle cleanser that removes dirt without stripping the skin.",
-          price: "$30",
+          price: 30,
         },
         {
           name: "Nykaa Lip Linear",
           image: "https://adn-static1.nykaa.com/media/wysiwyg/8904245709105_topbanner.jpg?tr=w-400,pr-true",
           description: "A smooth, long-lasting lip liner to define and shape lips.",
-          price: "$15",
+          price: 15,
         },
         {
           name: "Nykaa Anti-Hairfall Shampoo",
           image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk0Wzu1TY1K0eUhWOnk0rGSJL0CgM6MABlpg&s",
           description: "A shampoo designed to strengthen and prevent hair fall.",
-          price: "$25",
+          price: 25,
         },
         {
           name: "Nykaa Contour Brush",
           image: "https://m.media-amazon.com/images/I/717GzR2ODrL.jpg",
           description: "A brush designed to apply and blend contour effortlessly.",
-          price: "$20",
+          price: 20,
         },
         {
           name: "Nykaa Face Wash",
           image: "https://m.media-amazon.com/images/I/811yBylnuoL.jpg",
           description: "A gentle face wash that removes impurities while nourishing the skin.",
-          price: "$17",
+          price: 17,
         },
         {
           name: "Nykaa Primer",
           image: "https://www.nykaa.com/beauty-blog/wp-content/uploads/2024/10/YUG-Banner.jpg",
           description: "A lightweight primer that smooths and preps skin for makeup.",
-          price: "$35",
+          price: 35,
         },
         {
           name: "MAC Velvet Teddy Lipstick",
           image: "https://indiatechdesk.com/wp-content/uploads/2020/11/nykaa-2.jpg",
           description: "A luxurious, creamy matte lipstick with a soft finish.",
-          price: "$15",
+          price: 15,
         },
         {
           name: "Nykaa Hydro Boost Moisturizer",
           image: "https://www.nykaa.com/beauty-blog/wp-content/uploads/images/issue275/FACE-OILS-101_OI.jpg",
           description: "A hydrating moisturizer that leaves skin soft and refreshed.",
-          price: "$28",
+          price: 28,
         },
         {
           name: "Nykaa Absolute Compact Powder",
           image: "https://m.media-amazon.com/images/I/31Xl8IobZsL.jpg",
           description: "A compact powder for a flawless, matte finish.",
-          price: "$22",
+          price: 22,
         },
         {
           name: "L'Oréal Paris Kajal Eyeliner",
           image: "https://images-static.nykaa.com/media/catalog/product/2/a/2a24ca28904245700850_rev1.jpg",
           description: "A rich, intense kajal eyeliner for defined eyes.",
-          price: "$30",
+          price: 30,
         },
         {
           name: "Nyakaa Matte Nailpaint",
           image: "https://images-static.nykaa.com/media/catalog/product/b/4/b4ede038904245706968_8.jpg?tr=w-500",
           description: "Adds volume and length to your lashes without clumping.",
-          price: "$19",
+          price: 19,
         },
         {
           name: "Nykaa Makeup Kit",
           image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_luov0kCeBCUwsKfeln3cUu-q4OK6kkUo8Q&s",
           description: "A silky-smooth compact powder for a shine-free finish.",
-          price: "$15",
+          price: 15,
         },
       ],
     };
@@ -161,8 +164,11 @@ export default {
     closePopup() {
       this.showPopup = false;
     },
+    
     addToCart(product) {
       alert(`${product.name} has been added to your cart!`);
+      this.cart.push(product);
+      localStorage.setItem("cart", JSON.stringify(this.cart)); // Save cart in storage
     },
     buyNow(product) {
       alert(`Redirecting to buy ${product.name}`);
@@ -172,7 +178,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .product-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr); 
@@ -200,7 +206,7 @@ export default {
   object-fit: cover;
   transition: transform 0.2s ease-in-out;
   border-bottom: 2px solid #ccc; 
-  box-shadow: 5px 5px 5px 0px rgb(99, 99, 99);
+  box-shadow: 5px 5px 5px 5px rgb(180, 173, 173);
 }
 
 .product-image:hover {
@@ -344,5 +350,22 @@ position: relative;
   .popup-content {
     width: 90%;
   }
+}
+
+.cart-link {
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  background-color: #ff4081;
+  padding: 10px;
+  width: 200px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.cart-link:hover {
+  background-color: #e91e63;
 }
 </style>
