@@ -88,7 +88,7 @@
   /* Footer */
 /* Footer Styling */
 .footer {
-  background: #333;
+  background: #3d3c3c;
   color: #fff;
   padding: 40px 20px;
   font-size: 14px;
@@ -98,7 +98,7 @@
 /* Footer Container (Grid Layout) */
 .footer-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);/* 4-column grid */
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   max-width: 1200px;
   margin: auto;
