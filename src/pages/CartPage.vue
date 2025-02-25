@@ -38,13 +38,16 @@
   <style>
   .cart {
     text-align: center;
-    padding: 80px 20px 20px;
+    padding: 90px 20px 20px;
     background: #fff;
   }
   
   .cart ul {
     list-style: none;
     padding: 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 20px;
   }
   
   .cart li {
@@ -54,6 +57,7 @@
     padding-top: 0px;
     border: 2px solid #e2dada;
     border-radius: 5px;
+    height: 85px;
   }
   
   .cart-img {

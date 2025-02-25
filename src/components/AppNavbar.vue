@@ -6,7 +6,8 @@
         <nav class="navbar">
           <div class="logo">
             <ul>
-            <li><img src="https://i0.wp.com/infobeamsolution.com/wp-content/uploads/2024/06/nykaalogo.png?fit=640%2C159&ssl=1" alt="logo" /></li>
+            <li><router-link to="/"><img src="https://i0.wp.com/infobeamsolution.com/wp-content/uploads/2024/06/nykaalogo.png?fit=640%2C159&ssl=1" 
+              alt="logo" /></router-link></li>
             <li><input type="text" v-model="searchQuery" placeholder="Search..." class="search-bar" /></li>
           </ul>
           </div>
