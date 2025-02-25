@@ -88,7 +88,7 @@
   /* Footer */
 /* Footer Styling */
 .footer {
-  background: #3d3c3c;
+  background: #535151;
   color: #fff;
   padding: 40px 20px;
   font-size: 14px;
