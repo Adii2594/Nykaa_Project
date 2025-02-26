@@ -86,7 +86,7 @@
   
   <style>
   /* Footer */
-/* Footer Styling */
+
 .footer {
   background: #535151;
   color: #fff;
